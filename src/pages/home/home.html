@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-row>
+      <ion-col col-10>
+        <ion-title>
+          My Journals
+        </ion-title>
+      </ion-col>
+      <ion-col col-2>
+        <ion-avatar item-end>
+          <img src="../../assets/imgs/logo.png" (click)="userProfile()">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name='menu'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-fab right bottom>
+    <button ion-fab color="secondary" (click)="addJournal()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+  <button ion-button color="danger" (click)="logout()">Log out</button>
+</ion-content>

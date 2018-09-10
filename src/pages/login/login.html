@@ -1,0 +1,38 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hideBackButton>
+    <ion-title >login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="loginForm(login.value)" [formGroup]="login">
+    <ion-item>
+      <ion-label color="primary" floating>Email</ion-label>
+      <ion-input type="email" formControlName="email" value="choudharymohit1109@gmail.com"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Password</ion-label>
+      <ion-input type="password" formControlName="password" value="123456"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button round full color="secondary" [disabled]="!login.valid">Login</button>
+    <ion-row>
+    <ion-col col-6>
+      <p text-left ion-text color="danger" tappable (click)="signUp()"><strong>Sign up</strong></p>
+    </ion-col>    
+    <ion-col col-6>
+        <p text-right ion-text color="danger" tappable (click)="forgotPassword()"><strong>Forgot Password?</strong></p>
+      </ion-col>
+    </ion-row>
+  </form>
+
+</ion-content>

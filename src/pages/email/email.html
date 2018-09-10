@@ -1,0 +1,37 @@
+<!--
+  Generated template for the EmailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Email Verify</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="sendEmail(emailSend.value)" [formGroup]="emailSend">
+    <ion-item>
+      <ion-label color="primary" floating>Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <div *ngIf = "sendEmailButton">
+      <button ion-button round full color="secondary" [disabled]="!emailSend.valid">Send Mail</button>
+    </div>
+    <p *ngIf = "!sendEmailButton" text-left ion-text color="danger"><strong>Resend mail after 30 sec...Wait!</strong></p>
+  </form>
+
+  <form (ngSubmit)="verifyOtp(verifyEmail.value)" [formGroup]="verifyEmail">
+    <ion-item>
+      <ion-label color="primary" floating>Enter OTP</ion-label>
+      <ion-input type="number" formControlName="otp" value="627289"></ion-input>
+    </ion-item>
+
+    <button ion-button round full color="secondary" [disabled]="!verifyEmail.valid">Verify Email</button>
+  </form>
+
+</ion-content>
